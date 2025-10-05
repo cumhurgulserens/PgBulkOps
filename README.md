@@ -1,16 +1,24 @@
-﻿																						 PgBulkOps
-PgBulkOps is a high-performance .NET library for PostgreSQL bulk operations.
-It provides ultra-fast bulk insert and bulk update methods using PostgreSQL’s native binary COPY protocol.
+# PgBulkOps
 
-Built on top of Npgsql, PgBulkOps can handle millions of rows in just a few seconds.
+**PgBulkOps** is a high-performance .NET library for PostgreSQL bulk operations.  
+It provides ultra-fast **bulk insert** and **bulk update** methods using PostgreSQL’s native **binary COPY** protocol.  
 
-✨ Features
-Bulk insert with PostgreSQL binary COPY
-Bulk update using COPY + temporary table + UPDATE ... FROM join
-Optional PascalCase → snake_case column name conversion
-Progress callback with configurable batch size
-Fully async/await compatible
-📦 Installation
+Built on top of [Npgsql](https://www.npgsql.org/), PgBulkOps can handle millions of rows in just a few seconds.
+
+---
+
+## ✨ Features
+- Bulk insert with PostgreSQL binary COPY  
+- Bulk update using COPY + temporary table + `UPDATE ... FROM` join  
+- Optional PascalCase → snake_case column name conversion  
+- Progress callback with configurable batch size  
+- Fully async/await compatible  
+
+---
+
+## 📦 Installation
+
+```bash
 dotnet add package PgBulkOps
 
 ✨ Quick Start
