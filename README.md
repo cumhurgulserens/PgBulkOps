@@ -21,7 +21,8 @@ Built on top of [Npgsql](https://www.npgsql.org/), PgBulkOps can handle millions
 ```bash
 dotnet add package PgBulkOps
 
-Quick Start
+✨ Quick Start
+
 Entity Definition
 
 public class User
