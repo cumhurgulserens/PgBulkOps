@@ -8,11 +8,11 @@ Built on top of [Npgsql](https://www.npgsql.org/), PgBulkOps can handle millions
 ---
 
 ## ✨ Features
-- 🚀 Bulk insert with PostgreSQL binary COPY  
-- ⚡ Bulk update using COPY + temporary table + `UPDATE ... FROM` join  
-- 🔄 Optional PascalCase → snake_case column name conversion  
-- 📊 Progress callback with configurable batch size  
-- ✅ Fully async/await compatible  
+- Bulk insert with PostgreSQL binary COPY  
+- Bulk update using COPY + temporary table + `UPDATE ... FROM` join  
+- Optional PascalCase → snake_case column name conversion  
+- Progress callback with configurable batch size  
+- Fully async/await compatible  
 
 ---
 
@@ -20,10 +20,10 @@ Built on top of [Npgsql](https://www.npgsql.org/), PgBulkOps can handle millions
 
 ```bash
 dotnet add package PgBulkOps
-🚀 Quick Start
+
+Quick Start
 Entity Definition
-csharp
-Copy code
+
 public class User
 {
     public long Id { get; set; }
@@ -37,9 +37,9 @@ public class User
     public string Country { get; set; } = default!;
     public DateTime? LastLogin { get; set; }
 }
+
 Bulk Insert Example
-csharp
-Copy code
+
 using Npgsql;
 using PgBulkOps;
 
@@ -66,9 +66,9 @@ await conn.BulkInsertAsync(users, "Users", opts =>
     opts.UseSnakeCase = true;
     opts.OnProgress = p => Console.WriteLine($"Inserted {p.Rows} rows...");
 });
+
 Bulk Update Example
-csharp
-Copy code
+
 // Update existing users
 foreach (var user in users)
     user.Name = user.Name + "_updated";
@@ -79,6 +79,7 @@ await conn.BulkUpdateAsync(users, "Users", "Id", opts =>
     opts.UseSnakeCase = true;
     opts.OnProgress = p => Console.WriteLine($"Updated {p.Rows} rows...");
 });
+
 ⚡ Performance
 Typical throughput (depending on hardware, WAL, and indexes):
 
